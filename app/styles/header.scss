@@ -1,0 +1,17 @@
+.navbar-static-top {
+  background: $color-text;
+  border-bottom: 1px solid $color-border;
+  border-radius: 0;
+
+  a {
+    color: $color-background;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  button {
+    color: $color-background;
+  }
+}

@@ -1,11 +1,11 @@
-<h2>Register User Metric</h2>
-
-{{outlet}}
-
-{{!--
-{{#each model as |registeredUser|}}
-  {{registered-user-chart registeredUser=registeredUser}}
-{{/each}}
---}}
-
-{{registered-user-chart registeredUsers=model}}
+<div id="registered-users" class="container">
+  <div class="row">
+    <div class="col-md-7 col-xl-8">
+      <h2>All Registered Users</h2>
+      {{registered-user-chart registeredUsers=model}}
+    </div>
+    <div class="col-md-5 col-xl-4">
+      {{outlet}}
+    </div>
+  </div>
+</div>

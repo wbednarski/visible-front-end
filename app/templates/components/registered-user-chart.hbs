@@ -1,17 +1,20 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="{{multiply 25 registeredUsersTotal}}">
-  <title>Registered User Metric Chart</title>
-  <desc>A chart shows the number of registered user by date.</desc>
+<div class="registered-user-chart">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="{{multiply SPACING registeredUsersTotal}}">
+    <title>Registered User Metric Chart</title>
+    <desc>A chart shows the number of registered user by date.</desc>
 
-  {{#each registeredUsersNormalized as |registeredUser index|}}
-    <g transform="translate(0, {{multiply 25 index}})">
-      <a xlink:href="/registered-users/{{registeredUser.id}}" xlink:title="View registered users on {{registeredUser.date}}">
-        <rect x="0" y="0" width="100%" height="20" class="bar-background" />
-        <rect x="0" y="0" width="{{registeredUser.numberNormalized}}%" height="20" class="bar" />
-        <text x="20" y="16" fill="#666" font-family="Monaco">{{registeredUser.number}}</text>
-      </a>
-    </g>
+    {{#each registeredUsersNormalized as |registeredUser index|}}
+      <g transform="translate(0, {{multiply SPACING index}})">
+        <a xlink:href="/{{registeredUser.id}}" xlink:title="View registered users on {{registeredUser.date}}">
+          <rect x="0" y="0" width="100%" height="{{BAR_HEIGHT}}" class="bar-background"></rect>
+          <rect x="0" y="0" width="{{registeredUser.numberNormalized}}%" height="{{BAR_HEIGHT}}" class="bar"></rect>
+          <text x="{{BAR_HEIGHT}}" y="22" class="text">{{registeredUser.number}}</text>
+        </a>
+      </g>
 
-  {{else}}
-    <text x="20" y="16" fill="#666" font-family="Monaco">No data found.</text>
-  {{/each}}
-</svg>
+    {{else}}
+      <text x="{{BAR_HEIGHT}}" y="16" class="text">No data found.</text>
+    {{/each}}
+  </svg>
+
+</div>

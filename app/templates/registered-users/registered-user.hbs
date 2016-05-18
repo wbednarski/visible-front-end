@@ -1,23 +1,26 @@
-<h2>Number of Registered Users</h2>
+<div id="registered-user">
 
-{{#if isEditing}}
+  <h2>Number of Registered Users on {{moment-format model.date 'MMM Do, YYYY'}}</h2>
 
-    {{input type="text" value=model.number}}
+  {{#if isEditing}}
 
-    {{pikaday-input value=model.date useUTC=true format='MMM Do, YYYY'}}
-
-    <div>
-      <a {{action 'toggleEditRegisteredUser'}}>Cancel</a> or <button {{action 'updateRegisteredUser' model}}>Update</button>
+    <div class="form-inline">
+      {{input type="number" value=model.number placeholder="Number of registered users" autocomplete="off" autofocus=true tabindex=1 class="form-control"}}
+      {{pikaday-input value=model.date useUTC=true format='MMM Do, YYYY' placeholder="Date" tabindex=2 class="form-control"}}
     </div>
 
-{{else}}
+    <div class="controls">
+      <a {{action 'toggleEditRegisteredUser'}}>Cancel</a> <span>or</span> <button {{action 'updateRegisteredUser' model}} class="btn btn-primary">Update</button>
+    </div>
 
-  <p>
-    <strong>{{model.number}}</strong> registered users on {{moment-format model.date 'MMM Do, YYYY'}}
-  </p>
+  {{else}}
 
-  <div>
-    <a {{action 'toggleEditRegisteredUser'}}>Edit</a> or <a {{action 'deleteRegisteredUser' model}}>Delete</a>
-  </div>
+    <h3>{{model.number}}!</h3>
 
-{{/if}}
+    <div class="controls">
+      <a {{action 'toggleEditRegisteredUser'}}>Edit</a> <span>or</span> <button {{action 'deleteRegisteredUser' model}} class="btn btn-danger">Delete</button>
+    </div>
+
+  {{/if}}
+
+</div>

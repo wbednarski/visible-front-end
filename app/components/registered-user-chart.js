@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  SPACING: 34,
+  BAR_HEIGHT: 30,
+
   registeredUsersDidChange: Ember.observer('registeredUsers.content.@each', function () {
     let ids = [];
     let numbers = [];

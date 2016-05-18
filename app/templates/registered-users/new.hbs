@@ -1,7 +1,14 @@
-{{input type="text" value=number}}
+<div id="registered-users-new">
 
-{{pikaday-input value=date useUTC=true format='MMM Do, YYYY'}}
+  <h2>Add New Registered User Metric</h2>
 
-<div>
-  <a {{action 'toggleEditRegisteredUser'}}>Cancel</a> or <button {{action 'createRegisteredUser' model}}>Create</button>
+  <div class="form-inline">
+    {{input type="number" value=number placeholder="Number of registered users" autocomplete="off" autofocus=true tabindex=1 class="form-control"}}
+    {{pikaday-input value=date useUTC=true format='MMM Do, YYYY' placeholder="Date" tabindex=2 class="form-control"}} {{!-- TODO No support for tabindex... --}}
+  </div>
+
+  <div class="controls">
+    {{#link-to 'registered-users'}}Cancel{{/link-to}} <span>or</span> <button {{action 'createRegisteredUser' model}} class="btn btn-primary">Create</button>
+  </div>
+
 </div>

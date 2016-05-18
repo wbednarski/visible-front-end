@@ -1,0 +1,27 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  color: $color-text;
+  background: $color-background;
+  font-weight: 300;
+}
+
+a {
+  color: $color-link;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: $color-visible;
+  }
+}
+
+h2 {
+  font-size: 22px;
+}

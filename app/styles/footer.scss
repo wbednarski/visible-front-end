@@ -1,0 +1,15 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: $color-background;
+  border-top: 1px solid $color-border;
+
+  a {
+    color: $color-link;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

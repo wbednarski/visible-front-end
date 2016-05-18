@@ -1,3 +1,28 @@
-{{#link-to 'application'}}Visible{{/link-to}}
+<div class="pos-f-t">
+  <nav class="navbar navbar-static-top">
+    <div class="container">
+      <h1>{{#link-to "application" class="navbar-brand"}}Visible{{/link-to}}</h1>
+      <button class="navbar-toggler hidden-md-up pull-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">☰</button>
+
+      <div class="collapse navbar-toggleable-sm pull-xs-right" id="exCollapsingNavbar2">
+        <ul class="nav navbar-nav">
+          <li class="nav-item">
+            {{#link-to "registered-users.new" class="nav-link"}}Add new metric{{/link-to}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
 
 {{outlet}}
+
+<footer class="footer">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li class="nav-item">
+        <span class="nav-link">&copy; {{currentYear}} Visible</span>
+      </li>
+    </ul>
+  </div>
+</footer>
