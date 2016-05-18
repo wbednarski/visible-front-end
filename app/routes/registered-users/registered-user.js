@@ -7,12 +7,23 @@ export default Ember.Route.extend({
     },
 
     updateRegisteredUser(model) {
-      model.save();
-      this.send('toggleEditRegisteredUser');
+      model.save().then(() => {
+        this.send('toggleEditRegisteredUser');
+      }, response => {
+        if (response.errors) {
+          console.error(response.message);
+        }
+      });
     },
 
     deleteRegisteredUser(model) {
-      model.destroyRecord({}).then(this.transitionTo('registered-users'));
+      model.destroyRecord({}).then(() => {
+        this.transitionTo('registered-users');
+      }, response => {
+        if (response.errors) {
+          console.error(response.message);
+        }
+      });
     }
   }
 });

@@ -8,7 +8,13 @@ export default Ember.Route.extend({
         date: this.controller.get('date')
       });
 
-      registeredUser.save();
+      registeredUser.save().then(() => {
+        this.transitionTo('registered-users');
+      }, response => {
+        if (response.errors) {
+          console.error(response.message);
+        }
+      });
     }
   }
 });
