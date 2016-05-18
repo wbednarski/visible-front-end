@@ -1,2 +1,21 @@
-<h2>Registered User</h2>
-{{model.number}}<button {{action 'deleteRegisteredUser' model.id}}>Delete</button>
+<h2>Number of Registered Users</h2>
+
+{{#if isEditing}}
+
+    {{input type="text" value=model.number}}
+
+    <div>
+      <a {{action 'toggleEditRegisteredUser'}}>Cancel</a> or <button {{action 'updateRegisteredUser' model}}>Update</button>
+    </div>
+
+{{else}}
+
+  <p>
+    <strong>{{model.number}}</strong> registered users on {{model.date}}
+  </p>
+
+  <div>
+    <a {{action 'toggleEditRegisteredUser'}}>Edit</a> or <a {{action 'deleteRegisteredUser' model.id}}>Delete</a>
+  </div>
+
+{{/if}}
