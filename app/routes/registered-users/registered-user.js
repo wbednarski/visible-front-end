@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   actions: {
     toggleEditRegisteredUser() {
-      this.controller.toggleProperty('isEditing', true);
+      this.controller.toggleProperty('isEditing');
     },
 
     updateRegisteredUser(model) {

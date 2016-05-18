@@ -12,7 +12,7 @@ export default Ember.Component.extend({
     let ratio = 0;
     let registeredUsersNormalized = [];
     let registeredUsers = this.get('registeredUsers');
-    let registeredUsersLength = this.get('registeredUsers').get('content').length;
+    let registeredUsersLength = registeredUsers.get('content').length;
 
     registeredUsers.map(registeredUser => {
       if (registeredUser) {
