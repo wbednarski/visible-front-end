@@ -1,5 +1,11 @@
 <h2>Register User Metric</h2>
 
+{{outlet}}
+
+{{!--
 {{#each model as |registeredUser|}}
   {{registered-user-chart registeredUser=registeredUser}}
 {{/each}}
+--}}
+
+{{registered-user-chart registeredUsers=model}}
