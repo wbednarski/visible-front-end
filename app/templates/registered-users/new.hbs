@@ -1,0 +1,7 @@
+{{input type="text" value=number}}
+
+{{pikaday-input value=date useUTC=true format='MMM Do, YYYY'}}
+
+<div>
+  <a {{action 'toggleEditRegisteredUser'}}>Cancel</a> or <button {{action 'createRegisteredUser' model}}>Create</button>
+</div>
