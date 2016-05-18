@@ -11,9 +11,8 @@ export default Ember.Route.extend({
       this.send('toggleEditRegisteredUser');
     },
 
-    deleteRegisteredUser(id) {
-      let registeredUser = this.store.peekRecord('registered-user', id);
-      registeredUser.destroyRecord({}).then(this.transitionTo('registered-users'));
+    deleteRegisteredUser(model) {
+      model.destroyRecord({}).then(this.transitionTo('registered-users'));
     }
   }
 });
