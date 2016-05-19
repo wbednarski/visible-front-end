@@ -10,7 +10,7 @@ Application organizes and tracks the number of registered users by date, and vis
 * change into the new directory
 * `npm install`
 * `bower install`
-* ember s --port 4200 --proxy http://localhost:5000
+* `ember s --port 4200 --proxy http://localhost:5000`
 * navigate to http://localhost:4200
 
 ## Prerequisites
