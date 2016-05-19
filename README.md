@@ -2,8 +2,16 @@
 
 Ember.js client for Rails 5 JSON 1.0 API
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Application organizes and tracks the number of registered users by date, and visualizes it into a chart.
+
+## Quick Start
+* `git clone git@github.com:wbednarski/backend-front-end.git` the other one
+* `git clone git@github.com:wbednarski/visible-front-end.git` this repository
+* change into the new directory
+* `npm install`
+* `bower install`
+* ember s --port 4200 --proxy http://localhost:5000
+* navigate to http://localhost:4200
 
 ## Prerequisites
 
