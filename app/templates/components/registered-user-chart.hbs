@@ -5,16 +5,15 @@
 
     {{#each registeredUsersNormalized as |registeredUser index|}}
       <g transform="translate(0, {{multiply SPACING index}})">
-        <a xlink:href="/{{registeredUser.id}}" xlink:title="View registered users on {{registeredUser.date}}">
+        {{#link-to 'registered-users.registered-user' registeredUser.id}}
           <rect x="0" y="0" width="100%" height="{{BAR_HEIGHT}}" class="bar-background"></rect>
           <rect x="0" y="0" width="{{registeredUser.numberNormalized}}%" height="{{BAR_HEIGHT}}" class="bar"></rect>
           <text x="{{BAR_HEIGHT}}" y="22" class="text">{{registeredUser.number}}</text>
-        </a>
+        {{/link-to}}
       </g>
 
     {{else}}
       <text x="{{BAR_HEIGHT}}" y="16" class="text">No data found.</text>
     {{/each}}
   </svg>
-
 </div>
