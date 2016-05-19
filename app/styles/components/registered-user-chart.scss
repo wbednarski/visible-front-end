@@ -5,8 +5,14 @@
     height: auto;
 
     .text {
+      font-size: 16px;
       font-family: $font-family-chart;
-      fill: $color-text;
+      fill: lighten($color-text, 10%);
+    }
+
+    .text-date {
+      font-size: 14px;
+      fill: lighten($color-text, 30%);
     }
 
     .bar {
