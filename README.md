@@ -1,4 +1,4 @@
-# Visible-front-end
+# Visible Front End
 
 Ember.js client for Rails 5 JSON 1.0 API
 
