@@ -33,6 +33,10 @@ export default Ember.Service.extend(Ember.Evented, {
       });
     }
 
+    registeredUsersNormalized.sort((a, b) => {
+      return new Date(b.date) - new Date(a.date);
+    });
+
     this.set('normalizedData', registeredUsersNormalized);
     this.trigger('update');
   }
