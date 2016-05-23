@@ -20,7 +20,7 @@ export default Ember.Component.extend({
     this.set('registeredUsersNormalized', this.get('normalizer').normalizedData);
   },
 
-  registeredUsersTotal: function() {
+  registeredUsersTotal: Ember.observer('registeredUsers.[]', function() {
     return this.get('registeredUsers').get('content').length || 1;
-  }.property()
+  }).property()
 });
