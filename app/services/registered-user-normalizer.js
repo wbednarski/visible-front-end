@@ -22,7 +22,7 @@ export default Ember.Service.extend(Ember.Evented, {
     });
 
     ratio = Math.max(...numbers) / 100;
-    numbersNormalized = numbers.map(number => (number / ratio ? number / ratio : 10).toFixed(2));
+    numbersNormalized = numbers.map(number => (number / ratio).toFixed(2));
 
     for (let i = 0; i < registeredUsersLength; i++) {
       registeredUsersNormalized.push({
@@ -36,7 +36,6 @@ export default Ember.Service.extend(Ember.Evented, {
     registeredUsersNormalized.sort((a, b) => {
       return new Date(b.date) - new Date(a.date);
     });
-
     this.set('normalizedData', registeredUsersNormalized);
     this.trigger('update');
   }
