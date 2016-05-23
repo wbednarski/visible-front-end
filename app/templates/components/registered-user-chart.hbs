@@ -11,7 +11,9 @@
       <g transform="translate(200, {{multiply SPACING index}})">
         {{#link-to 'registered-users.registered-user' registeredUser.id}}
           <rect x="0" y="0" width="100%" height="{{BAR_HEIGHT}}" class="bar-background"></rect>
-          <rect x="0" y="0" width="{{registeredUser.numberNormalized}}%" height="{{BAR_HEIGHT}}" class="bar"></rect>
+          <rect x="0" y="0" width="{{registeredUser.numberNormalized}}%" height="{{BAR_HEIGHT}}" class="bar">
+            <animate attributeType="XML" attributeName="width" from="0" to="{{registeredUser.numberNormalized}}%" dur="2s"></animate>
+          </rect>
           <text x="10" y="22" class="text">{{registeredUser.number}}</text>
         {{/link-to}}
       </g>
