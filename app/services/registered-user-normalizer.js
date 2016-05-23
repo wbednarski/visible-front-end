@@ -13,6 +13,7 @@ export default Ember.Service.extend(Ember.Evented, {
     let registeredUsers = this.get('store').peekAll('registered-user');
     let registeredUsersLength = registeredUsers.get('content').length;
 
+    // populate array with data from store for model RegisteredUser
     registeredUsers.map(registeredUser => {
       if (registeredUser) {
         ids.push(registeredUser.get('id'));
@@ -21,9 +22,11 @@ export default Ember.Service.extend(Ember.Evented, {
       }
     });
 
+    // we need to have numbers normalized to 100% in order to show them on the chart
     ratio = Math.max(...numbers) / 100;
     numbersNormalized = numbers.map(number => (number / ratio).toFixed(2));
 
+    // populate array that is used to feed the chart
     for (let i = 0; i < registeredUsersLength; i++) {
       registeredUsersNormalized.push({
         id: ids[i],
@@ -33,9 +36,11 @@ export default Ember.Service.extend(Ember.Evented, {
       });
     }
 
+    // sort by date - DESC
     registeredUsersNormalized.sort((a, b) => {
       return new Date(b.date) - new Date(a.date);
     });
+
     this.set('normalizedData', registeredUsersNormalized);
     this.trigger('update');
   }
