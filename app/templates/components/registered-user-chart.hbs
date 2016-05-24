@@ -4,17 +4,13 @@
     <desc>A chart shows the number of registered users by date.</desc>
 
     {{#each registeredUsersNormalized as |registeredUser index|}}
-      <g transform="translate(0, {{multiply SPACING index}})">
-        <text x="{{BAR_HEIGHT}}" y="22" class="text text-date">{{moment-format registeredUser.date 'MMM Do, YYYY'}}</text>
-      </g>
-
-      <g transform="translate(200, {{multiply SPACING index}})" class="bar-container">
+      <g transform="translate(0, {{multiply SPACING index}})" class="bar-container">
         {{#link-to 'registered-users.registered-user' registeredUser.id}}
           <rect x="0" y="0" width="100%" height="{{BAR_HEIGHT}}" class="bar-background"></rect>
           <rect x="0" y="0" width="{{registeredUser.numberNormalized}}%" height="{{BAR_HEIGHT}}" class="bar">
             <animate attributeType="XML" attributeName="width" from="0" to="{{registeredUser.numberNormalized}}%" dur="2s"></animate>
           </rect>
-          <text x="10" y="22" class="text">{{registeredUser.number}}</text>
+          <text x="10" y="22" class="text">{{registeredUser.number}} <tspan class="text text-date">on {{moment-format registeredUser.date 'MMM Do, YYYY'}}</tspan></text>
         {{/link-to}}
       </g>
 

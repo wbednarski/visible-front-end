@@ -11,8 +11,8 @@
     }
 
     .text-date {
-      font-size: 14px;
-      fill: lighten($color-text, 30%);
+      font-size: 12px;
+      fill: lighten($color-text, 10%);
     }
 
     .bar-container {
@@ -42,7 +42,10 @@
             fill: $color-background;
           }
 
-          .bar,
+          .bar {
+            fill: darken($color-link, 20%);
+          }
+
           .bar-background {
             fill: $color-link;
           }
