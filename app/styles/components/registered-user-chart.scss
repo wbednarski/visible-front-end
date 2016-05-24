@@ -15,12 +15,47 @@
       fill: lighten($color-text, 30%);
     }
 
-    .bar {
-      fill: $color-chart-bar-active;
-    }
+    .bar-container {
 
-    .bar-background {
-      fill: $color-chart-bar-default;
+      &:hover {
+
+        a {
+          text-decoration: none;
+
+          .text {
+            fill: $color-background;
+          }
+        }
+
+        .bar,
+        .bar-background {
+          fill: $color-link;
+        }
+      }
+
+      a {
+
+        &.active {
+          text-decoration: none;
+
+          .text {
+            fill: $color-background;
+          }
+
+          .bar,
+          .bar-background {
+            fill: $color-link;
+          }
+        }
+      }
+
+      .bar {
+        fill: $color-chart-bar-active;
+      }
+
+      .bar-background {
+        fill: $color-chart-bar-default;
+      }
     }
   }
 }
