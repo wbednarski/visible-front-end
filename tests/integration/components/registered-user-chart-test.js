@@ -1,8 +1,10 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import Ember from 'ember';
 
 moduleForComponent('registered-user-chart', 'Integration | Component | registered user chart', {
-  integration: true
+  integration: true,
+  registeredUsers: Ember.Object.extend({content: [Ember.Object.extend({id:1, number: 7576575, date: '2016-05-23'}).create()]}).create()
 });
 
 test('it renders', function(assert) {
@@ -12,13 +14,4 @@ test('it renders', function(assert) {
   this.render(hbs`{{registered-user-chart}}`);
 
   assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#registered-user-chart}}
-      template block text
-    {{/registered-user-chart}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
 });
